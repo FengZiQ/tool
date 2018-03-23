@@ -1,0 +1,88 @@
+Expected 版本号: 2.0.1
+Actual 版本号: 2.0.1
+-*- The case is executed -*-
+
+Expected 版本号: 2.0.2
+Actual 版本号: 2.0.2
+-*- The case is executed -*-
+
+Expected 版本号: 2.0.3
+Actual 版本号: 2.0.3
+-*- The case is executed -*-
+
+'result': 'p'
+版本号: 2.0.1
+
+-*- The case is executed -*-
+
+版本号: 2.0.2
+
+-*- The case is executed -*-
+
+版本号: 2.0.3
+
+-*- The case is executed -*-
+
+'result': 'p'
+版本号: 2.0.1
+
+-*- The case is executed -*-
+
+版本号: 2.0.2
+
+-*- The case is executed -*-
+
+软件类型 is not found
+
+版本号: 
+
+-*- The case is executed -*-
+
+'result': 'f'
+软件类型 is not found
+
+版本号: 
+
+-*- The case is executed -*-
+
+新建升级包 is not found
+
+软件类型 is not found
+
+版本号: 
+
+-*- The case is executed -*-
+
+新建升级包 is not found
+
+版本号: 2.0.3
+
+-*- The case is executed -*-
+
+'result': 'f'
+版本号: 2.0.1
+
+-*- The case is executed -*-
+
+版本号: 2.0.2
+
+-*- The case is executed -*-
+
+版本号: 2.0.3
+
+-*- The case is executed -*-
+
+'result': 'f'
+新增包类型为: exe; 版本号: 2.0.1
+
+-*- The case is executed -*-
+
+新增包类型为: bin; 版本号: 2.0.2
+
+-*- The case is executed -*-
+
+新增包类型为: ppm; 版本号: 2.0.3
+
+-*- The case is executed -*-
+
+'result': 'p'
