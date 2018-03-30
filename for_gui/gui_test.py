@@ -29,9 +29,6 @@ class GUITestTool(object):
         self.driver.find_element_by_id("loginSubmit").click()
         time.sleep(3)
 
-    def finished(self):
-        self.driver.close()
-
     """
     locator type: 
     By.ID,By.NAME,By.CLASS_NAME,By.TAG_NAME,By.LINK_TEXT,By.PARTIAL_LINK_TEXT,By.XPATH,By.CSS_SELECTOR
@@ -97,6 +94,9 @@ class GUITestTool(object):
             tolog('time out')
 
         return
+
+    def finished(self):
+        self.driver.close()
 
     def mark_status(self):
 

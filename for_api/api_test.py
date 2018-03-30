@@ -17,9 +17,15 @@ server = Server()
 
 
 class APITest(object):
-    flag = False
-    method, serverIp, service, cases_file = '', '', '', ''
-    optional, must = [], []
+
+    def __init__(self):
+        self.flag = False
+        self.method = ''
+        self.serverIp = ''
+        self.service = ''
+        self.cases_file = ''
+        self.optional = []
+        self.must = []
 
     # For test of method 'post/put/delete' and confirm response
     def settings_test(self, cases_sheet, must_response_sheet, hold_time=0):
@@ -39,7 +45,7 @@ class APITest(object):
             handling(settings)
 
             if 'pp_trade_no' in settings.keys() and self.service == 'api/scannedCode':
-                num = random.randint(1, 100)
+                num = random.randint(1, 1000)
                 settings['pp_trade_no'] = str(num*100) + str(settings['pp_trade_no'])
 
             if 'sign' in settings.keys():
@@ -76,7 +82,7 @@ class APITest(object):
                 else:
                     tolog('HTTP status code is ' + str(result['response']))
                     tolog('Actual response: ' + json.dumps(temp, ensure_ascii=False, indent=2).replace('\n', ''))
-                    tolog('-*-*- The case is executed! -*-*-\n')
+                    tolog('-*- The case is executed! -*-\n')
 
             time.sleep(hold_time)
 
@@ -115,7 +121,7 @@ class APITest(object):
                     self.flag = True
                     tolog('Fail: HTTP status code is ' + str(result['response']))
                     tolog('Error Message: ' + json.dumps(temp, ensure_ascii=False, indent=2).replace('\n', ''))
-                    tolog('-*-*- The case is executed! -*-*-\n')
+                    tolog('-*- The case is executed! -*-\n')
                 else:
                     for key in response_must.keys():
                         try:
@@ -129,7 +135,7 @@ class APITest(object):
                     else:
                         tolog('HTTP status code is ' + str(result['response']))
                         tolog(json.dumps(temp, ensure_ascii=False, indent=2).replace('\n', ''))
-                        tolog('-*-*- The case is executed! -*-*-\n')
+                        tolog('-*- The case is executed! -*-\n')
 
                 optional_settings[p] = p_value
                 optional_settings['sign'] = pay_key
@@ -178,7 +184,7 @@ class APITest(object):
                 self.flag = True
                 tolog('Fail: HTTP status code is ' + str(result['response']))
                 tolog('Error Message: ' + str(result['text']).replace('\n', ''))
-                tolog('-*-*- The case is executed! -*-*-\n')
+                tolog('-*- The case is executed! -*-\n')
             else:
                 temp = json.loads(result["text"])
                 for key in expected.keys():
@@ -191,8 +197,8 @@ class APITest(object):
                         tolog('Fail: Missing parameter ' + str(key))
 
                 tolog('HTTP Status Code: ' + str(result['response']))
-                tolog('Response ' + json.dumps(temp, ensure_ascii=False))
-                tolog('-*-*- The case is executed! -*-*-\n')
+                tolog('Actual Response: ' + json.dumps(temp, ensure_ascii=False))
+                tolog('-*- The case is executed! -*-\n')
 
             time.sleep(hold_time)
 
@@ -244,8 +250,8 @@ class APITest(object):
                         tolog('\nPlease change the inspection conditions!!!\n')
 
                     tolog('HTTP Status Code: ' + str(result['response']))
-                    tolog('Response ' + json.dumps(temp, ensure_ascii=False))
-                    tolog('-*-*- The case is executed! -*-*-\n')
+                    tolog('Actual Response: ' + json.dumps(temp, ensure_ascii=False))
+                    tolog('-*- The case is executed! -*-\n')
                 
                 r_m_settings[p] = must_value
                 time.sleep(hold_time)
