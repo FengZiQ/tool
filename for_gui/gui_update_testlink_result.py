@@ -4,11 +4,12 @@
 import testlink
 import time
 import os
+import re
 
 
 url = "http://localhost/testlink/lib/api/xmlrpc/v1/xmlrpc.php"
-tester_key = {"fzq": "3c55ffa8e147e98ec9d96255b0e96e7f"}
-tlc = testlink.TestlinkAPIClient(url, tester_key["fzq"])
+tester_key = {"admin": "3c55ffa8e147e98ec9d96255b0e96e7f"}
+tlc = testlink.TestlinkAPIClient(url, tester_key["admin"])
 
 project_name = '设备管理平台'
 test_plan_name = '测试环境'
@@ -71,20 +72,21 @@ def to_execute_cases():
                     print(case_name)
 
                     # execute test case
-                    os.system('python ' + case_name + '.py')
+                    # os.system('python ' + case_name + '.py')
                     case_steps = tlc.getTestCase(case_body['tcase_id'])[0]['steps']
 
                     # collect the test case result: 'result': 'p' or 'result': 'f' marks one case result;
                     notes = open('testLink.notes', 'r', encoding='UTF-8')
-                    temp = notes.read().replace('\n', '')
-                    temp1 = temp.split("'result': ")
+                    temp = notes.read().split("'result': ")
+                    # temp1 = temp.split("'result': ")
 
                     # result of all steps
-                    test_case_result = temp1[-1][1]
+                    test_case_result = temp[-1][1]
 
                     # execution notes of all steps
-                    temp3 = temp1[-2].replace("'p'", '').replace("'p'", '')
-                    steps_notes = temp3.split('-*- The case is executed -*-')[:-1]
+                    temp3 = temp[-2].replace("'p'", '').replace("'f'", '')
+
+                    steps_notes = temp3.split('@结束@')[:-1]
 
                     notes.close()
 
