@@ -1,0 +1,44 @@
+<div id="singleDeviceListContainer" class="row">
+	<div class="col-sm-12 titleStyle">
+    	<label class="searchText" for="queryDeviceId">设备编号</label><input type="text" id="queryDeviceId" class="special"/>
+		<label class="searchText" for="queryDeviceType">产品类型</label><select id="productType" class="specialselect"></select>
+    	<label class="searchText" for="queryDeviceType">设备类型</label><select id="queryDeviceType" class="specialselect"></select>
+        <button class="searchBtn" type="button" onclick="getDeviceList(1);">查询</button>
+	</div>
+	<div class="col-sm-12 handle">
+		<button class="batchAdd" id="addbtn" onclick="deviceConfigEdit('_add');">新增配置</button>
+		<div class="collect">该查询条件下，共<span class="fontbold">0</span>条记录。</div>
+        <table class="theadStyle merOver">
+            <tr>
+                <!--<th class="col-sm-1"><input id='checkAllId' type='checkbox'></th>-->
+                <th class="col-sm-2">设备编号</th>
+				<th class="col-sm-2">产品类型</th>
+                <th class="col-sm-2">设备类型</th>
+                <th class="col-sm-2">金额关键字</th>
+                <th class="col-sm-2">排除关键字</th>
+                <!--<th class="col-sm-1 adminPer hidden">日志上传</th>-->
+                <!--<th class="col-sm-1 adminPer hidden">小票上传</th>-->
+                <!--<th class="col-sm-1">蜂鸣器</th>-->
+                <!--<th class="col-sm-1">开机语音</th>-->
+                <th class="col-sm-2">操作</th>
+            </tr>
+		</table>
+   	</div>
+   	<div class="col-sm-12 tableBody" style="max-height: calc(100% - 190px);overflow: auto;">
+		<table class="mainTable" id="devicesTable" style="table-layout: fixed;">
+			<tbody id="devicesTbody" class="trStyle"></tbody>
+		</table>
+	</div>
+	<div class="paginationDiv">
+		<!--<span class="chooseStatistics">当前已选择<span id="chooseValue">0</span>条数据。</span>-->
+		<label class="branchs" for="branchText">每页条数：</label>
+		<select id="branchText" class="specialselect">
+			<option value="10">10</option>
+			<option selected value="15">15</option>
+			<option value="25">25</option>
+			<option value="50">50</option>
+			<option value="100">100</option>
+		</select>
+		<div id="pagination" class="pagination"></div>
+	</div>
+</div>

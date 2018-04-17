@@ -1,0 +1,51 @@
+<div id="payChannelListContainer" class="row">
+	<div class="col-sm-12 titleStyle">
+    	<label class="hidden searchText" id="customer_name" for="customer_input">服务商名称:</label><input id="customer_input" class="special hidden" name="customer_input" type="text">
+        <label class="searchText" for="channelName">参数配置名称:</label><input id="channelName" class="special" name="description" type="text">
+		<label class="searchText" for="channelName">设备编号:</label><input id="serialNum" class="special" name="serialNum" type="text">
+        <label class="searchText" for="channelType">类型:</label>
+        <select id="channelType" class="specialselect" name="channelType">
+            <option value="">全部</option>
+            <option value="1">普通通道</option>
+            <option value="2">定额通道</option>
+        </select>
+		<label class="searchText" for="isDefault">是否默认:</label>
+		<select id="isDefault" class="specialselect" name="isDefault">
+			<option value="">全部</option>
+			<option value="1">是</option>
+			<option value="0">否</option>
+		</select>
+        <button class="searchBtn" id="querybtn" onclick="getPayChannelList(1);">查询</button>
+    </div>
+    <div class="col-sm-12 handle">
+		<button class="batchAdd hidden" id="addbtn" onclick="payChannlEdit('_add')">添加配置</button>
+		<!--<button class="batchDel" onclick="">全部下发</button>-->
+		<div class="collect">该查询条件下，共<span class="fontbold">0</span>条记录。</div>
+        <table class="theadStyle">
+            <tr>
+                <th class="col-sm-2">参数配置名称</th>
+                <th class="col-sm-3">服务商名称</th>
+                <th class="col-sm-1">类型</th>
+                <th class="col-sm-1">定额(元)</th>
+				<th class="col-sm-1">是否默认</th>
+                <th class="col-sm-2">操作</th>
+   			</tr>
+		</table>
+   	</div>
+   	<div class="col-sm-12 tableBody" style="max-height: calc(100% - 190px);overflow: auto;">
+		<table class="mainTable" id="payChannelTable">
+			<tbody class="trStyle"></tbody>
+		</table>
+	</div>
+	<div class="paginationDiv">
+        <label class="branchs" for="branchText">每页条数：</label>
+		<select id="branchText" class="specialselect">
+			<option value="10">10</option>
+			<option value="15" selected>15</option>
+			<option value="25">25</option>
+			<option value="50">50</option>
+			<option value="100">100</option>
+		</select>
+		<div id="pagination" class="pagination"></div>
+	</div>
+</div>

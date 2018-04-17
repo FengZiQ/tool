@@ -1,0 +1,120 @@
+<div id="customerDeviceTitle">
+	<a href="index.html#customer" class="menuValue">服务商列表</a>&nbsp;/&nbsp;
+	<a href="index.html#customerDeviceList" class="menuValue">服务商设备列表</a>&nbsp;/&nbsp;
+	<a href="javascript:void(0);" class="menuValue">设备详情</a>
+</div>
+<div id="deviceDetailsTitle">
+	<a href="index.html#deviceList" class="menuValue">设备列表</a>&nbsp;/&nbsp;
+	<a href="javascript:void(0);" class="menuValue">设备详情</a>
+</div>
+<div id="checkBoundDeviceTitle">
+	<a href="index.html#checkBoundDevice" class="menuValue">已销售设备</a>&nbsp;/&nbsp;
+	<a href="javascript:void(0);" class="menuValue">设备详情</a>
+</div>
+<div id="deviceClassifyContainer" class="list">
+	<div class="col-sm-12" style="margin: 18px auto 10px;">
+		<input type="radio" name="deviceClassify" id="signMonitor" value="3" checked="checked"><label class="radioLeft"  for="signMonitor">信号监测</label>
+		<input type="radio" name="deviceClassify" id="deviceDetails" value="1"><label class="radioLeft" for="deviceDetails">设备详情</label>
+		<!--<input type="radio" name="deviceClassify" id="flowStatistics" value="2"><label class="radioLeft" for="flowStatistics">流量统计</label>-->
+		<!--<input type="radio" name="deviceClassify" id="selfInspection" value="4"><label class="radioLeft"   for="selfInspection">设备自检</label>-->
+	</div>
+	<!--设备详情-->
+	<div id="deviceDetailsContainer" class="hidden">
+		<div class="row">
+			<div class="col-sm-12" style="margin-top: 20px;">
+				<!--<div class="panel panel-default">-->
+					<!--<div class="panel-heading"><b>主体信息</b></div>-->
+					<!--<div class="panel-body" style="margin-left: 10px;" id="mainInformation"></div>-->
+				<!--</div>-->
+				<div class="panel panel-default">
+					<div class="panel-heading"><b>设备版本</b></div>
+					<div class="panel-body" style="margin-left: 10px;" id="detailDeviceId"></div>
+					<div class="panel-body">
+						<table class="table table-striped table-bordered">
+							<thead>
+								<tr>
+									<td class="col-sm-1">App</td>
+									<td class="col-sm-1">版本</td>
+								</tr>
+							</thead>
+							<tbody id="versionTBody">
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading"><b>设备连接历史列表</b></div>
+					<div class="panel-body">
+						<table id="devicesTable" class="table table-striped table-bordered">
+							<thead>
+								<tr>
+									<td class="col-sm-1">连接时间</td>
+									<td class="col-sm-1">断开连接时间</td>
+								</tr>
+							</thead>
+							<tbody id="historyTbody">
+							</tbody>
+						</table>
+						<div class="paginationDiv" style="text-align:center;">
+							<div id="pagination" class="pagination"></div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading"><b>位置信息</b></div>
+					<div class="panel-body" id="ipLocation"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--流量统计-->
+	<div id="flowStatisticsContainer" class="hidden">
+		<div class="row">
+			<div class="col-sm-12" style="margin-top: 20px;">
+				暂无
+			</div>
+		</div>
+	</div>
+	<!--信号检测-->
+	<div id="signMonitorContainer" class="hidden">
+		<div class="row">
+			<div class="col-sm-12" style="margin-top: 20px;">
+				<div class="panel panel-default">
+					<div class="panel-heading" id="connectType"><b></b></div>
+					<div id="signalShow" style="height:500px"></div>
+					<div class="panel-body" id="indicator" style="text-align: center;margin-top: -120px;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--设备自检-->
+	<div id="fselfInspectionContainer" class="hidden">
+		<div class="row">
+			<div class="col-sm-12" style="margin-top: 20px;">
+				<div id="deviceSupervise">
+					<button>设备一键检测</button>
+					<p></p>
+					<div class="progress">
+						<div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 80%;">
+							<div class="progress-value">80%</div>
+						</div>
+					</div>
+					<div class="progress">
+						<div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 80%;">
+							<div class="progress-value">80%</div>
+						</div>
+					</div>
+					<div class="progress">
+						<div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 80%;">
+							<div class="progress-value">80%</div>
+						</div>
+					</div>
+				</div>
+				<div id="keyboardSupervise">
+					<button>键盘一键检测</button>
+					<p></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,68 @@
+<div id="pushDetailsTitle">
+    <a href="index.html#receiptStatistics" class="menuValue">小票回归统计</a>&nbsp;/&nbsp;
+    <a href="index.html#statisticsDetails" class="menuValue">按天统计查询</a>&nbsp;/&nbsp;
+    <a href="javascript:void(0);" class="menuValue">按小时统计查询</a>
+</div>
+<div id="pushDetailsContainer" class="row">
+    <div class="col-sm-12 titleStyle">
+        <span id="dataRange">
+        	<label for="reportrange">周期</label>
+	        <div id="reportrange" class="dateRange pull-left" style="border-radius: 4px;">
+                <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                <span id="searchDateRange"></span>
+                <b class="caret"></b>
+            </div>
+        </span>
+        <button class="searchBtn" id="querybtn" onclick="getPushList()">查询</button>
+    </div>
+    <div class="col-sm-12">
+        <div class="countData"></div>
+
+    </div>
+    <div class="col-sm-12 handle">
+        <button class="batchAdd" onclick="" id="addbtn">导出</button>
+        <div class="collect">该查询条件下，共<span class="fontbold">0</span>条记录。</div>
+        <table class="theadStyle">
+            <tr class="thStyle">
+                <th class="col-sm-3" style="padding-left: 20px;">推送时间</th>
+                <th class="col-sm-4">推送内容</th>
+                <th class="col-sm-3">状态</th>
+                <th class="col-sm-2" style="text-align: center;">操作</th>
+            </tr>
+        </table>
+    </div>
+    <div class="col-sm-12 tableBody" style="max-height: calc(100% - 255px);overflow: auto;">
+        <table class="mainTable" id="pushTable">
+            <tbody class="trStyle"></tbody>
+        </table>
+    </div>
+    <div class="paginationDiv">
+        <label class="branchs" for="branchText">每页条数：</label>
+        <select id="branchText" class="specialselect">
+            <option value="10">10</option>
+            <option value="15" selected>15</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+        <div id="pagination" class="pagination"></div>
+    </div>
+    <div class="modal fade" id="confimUpgrade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <p class="modal_title" id="modal_title" style="text-align: center"></p>
+                    <p class="modal_title" id="modal_dataTime"></p>
+                </div>
+                <div class="modal-body">
+                    <pre></pre>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="cancelButton">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

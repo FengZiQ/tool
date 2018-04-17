@@ -1,0 +1,51 @@
+<div id="statisticsListContainer" class="row">
+    <div class="col-sm-12 titleStyle">
+        <span id="dataRange">
+        	<label for="reportrange">日期</label>
+	        <div id="reportrange" class="dateRange pull-left" style="border-radius: 4px;">
+                <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                <span id="searchDateRange"></span>
+                <b class="caret"></b>
+            </div>
+        </span>
+        <button class="searchBtn" type="button" style="margin-left: 18px" onclick="getStatisticsList();getfeedback()">查询</button>
+    </div>
+    <div class="tableBody" style="max-height: calc(100% - 50px);overflow: auto;width:100%;">
+        <div class="col-sm-12 handle">
+            <p class="arrange">用户点击问题排行</p>
+            <table class="theadStyle">
+                <tr>
+                    <th class="col-sm-2" style="padding-left: 20px;">序号</th>
+                    <th class="col-sm-8">问题标题</th>
+                    <th class="col-sm-2">点击数量</th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm-12 tableBody">
+            <table class="mainTable" id="devicesTable">
+                <tbody id="devicesTbody" class="trStyle" >
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-12 handle">
+            <p class="arrange">问题反馈统计</p>
+            <ul class="overall">
+                <li>
+                    <img src="../../common/images/total.jpg">
+                    <p class="condition">总计</p>
+                    <p class="amount total"></p>
+                </li>
+                <li>
+                    <img src="../../common/images/resolved.jpg">
+                    <p class="condition">已解决</p>
+                    <p class="amount resolved"></p>
+                </li>
+                <li>
+                    <img src="../../common/images/unsolved.jpg">
+                    <p class="condition">未解决</p>
+                    <p class="amount unresolve"></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

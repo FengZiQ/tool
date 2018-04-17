@@ -1,0 +1,55 @@
+<div id="hotQuestionListTitle">
+	<a href="index.html#familiarQuestion" class="menuValue">常见问题</a>&nbsp;/&nbsp;
+	<a href="javascript:void(0);" class="menuValue">热点问题管理</a>
+</div>
+<div id="addHotQuestionTitle">
+	<a href="index.html#familiarQuestion" class="menuValue">常见问题</a>&nbsp;/&nbsp;
+	<a href="index.html#hotQuestionList"  class="menuValue">热点问题管理</a>&nbsp;/&nbsp;
+	<a href="javascript:void(0);" class="menuValue">添加热点问题</a>
+</div>
+<div id="hotQuestionListContainer" class="row">
+	<div class="col-sm-12 titleStyle">
+		<button class="batchAdd" onclick="addHotQuestion();" style="width: 110px;margin-top: 0;">添加热点问题</button>
+	</div>
+    <div class="col-sm-12">
+    	<div class="collect" style="float: left;margin-bottom: 10px;">当前热点问题<span id="hotCount" class="fontbold">0</span>条，还可添加<span class="fontbold" id="editHotCount">0</span>条。</div>
+        <table class="theadStyle">
+            <tr>
+                <th class="col-sm-3">标题</th>
+                <th class="col-sm-3">标签</th>
+                <th class="col-sm-2">创建时间</th>
+                <th class="col-sm-1">操作</th>
+            </tr>
+        </table>
+    </div>
+    <div class="col-sm-12 tableBody" style="max-height: calc(100% - 175px);overflow: auto;">
+        <table class="mainTable" id="questionTable" style="table-layout: fixed;">
+        </table>
+    </div>
+</div>
+<div id="addHotQuestionContainer" class="row">
+	<div class="col-sm-12 titleStyle">
+		<label class="searchText" for="questionTitle">问题标题</label><input type="text" id="questionTitle" class="special"/>
+        <label class="searchText" for="questionTag">标签</label><input type="text" id="questionTag" class="special"/>
+        <button class="searchBtn" type="button" onclick="addHotQuestionList();">查询</button>
+	</div>
+	<div class="col-sm-12">
+		<div class="collect" style="float: left;">该查询条件下，共<span id="fontbold" class="fontbold">0</span>条记录，还可添加<span class="fontbold" id="editHotCounts">0</span>条热点问题。</div>
+        <table class="theadStyle">               
+            <tr class="thStyle">
+				<th class="col-sm-1"></th>
+				<th class="col-sm-3">标题</th>
+                <th class="col-sm-3">标签</th>
+                <th class="col-sm-2">创建时间</th>
+			</tr>
+		</table>
+   	</div>
+	<div class="col-sm-12 tableBody" style="max-height: calc(100% - 180px);overflow: auto;">
+		<table class="mainTable" id="addHotQuestionTable">
+			<tbody class="trStyle"></tbody>
+		</table>
+	</div>		
+	<div id="addDeviceDiv" class="hidden" style="text-align: center;"><button class="addDeviceBtn" style="margin: 10px 0;" onclick="addQuestion();">确认添加</button></div>
+</div>
+
+	   

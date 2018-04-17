@@ -1,0 +1,41 @@
+<div id="uploadResourceTitle">
+    <a href="index.html#systemResourcePack" class="menuValue">系统资源管理</a>&nbsp;/&nbsp;
+    <a href="javascript:void(0);" class="menuValue">系统资源包上传</a>
+</div>
+<div id="uploadResourceContainer"  class="list">
+	<div class="row">
+        <div class="col-sm-12 textEdit">
+            <form class="form-horizontal textEdit" role="form" id="uploadPack">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="fileName"><span class="requiredValue">文件名:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="fileName" id="fileName" placeholder="请输入文件名称">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="version"><span class="requiredValue">版本号:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="version" id="version" placeholder="请输入资源包版本号">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="packType"><span class="requiredValue">类型:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <select class="form-control" id="packType" name="type"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="packType"><span class="requiredValue"><p>文件上传<span id="fileStaut" style="display: block;color: red;">(文件未上传)</span></p></span></label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control hidden" id="localPath" name="localPath" value="" />
+                        <input id="file" name="file" class="file" type="file" multiple data-max-file-count="1">
+                    </div>
+                </div>
+                <div class="saveStyle">
+                    <button type="submit" class="saveBtn">保存</button>
+                    <div class="return" onclick="tosystemResourcePack();">返回</div>
+                </div>
+            </form>
+        </div>
+	</div>
+</div>

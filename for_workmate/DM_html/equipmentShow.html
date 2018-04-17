@@ -1,0 +1,37 @@
+<div id="equipmentShowContainer" class="row">
+    <div class="col-sm-12 titleStyle" id="condition">
+        <label for="summaryType">销售状况</label>
+        <select id="summaryType" class="specialselect" >
+            <option value="3">全部</option>
+            <option value="0">已销售</option>
+            <option value="1">未销售</option>
+        </select>
+        <span class="subjoin"><label class="searchText" for="customerId" style="margin-right: 5px;">服务商名称 </label><select id="customerId" name="customerId" class="selectpicker" data-live-search="true"></select></span>
+    </div>
+    <div class="tableBody" style="max-height: calc(100% - 50px);overflow: auto;width: 100%;">
+        <div style="width:510px;height: 160px;margin:0 auto 30px">
+            <div class="facilitySum">
+                <p id="total"></p>
+                <span>设备总数</span>
+            </div>
+            <div class="facilityRough">
+                <p id="rough"></p>
+                <span>已销售</span>
+            </div>
+            <div class="facilitSuc">
+                <p id="connect"></p>
+                <span>已连接</span>
+            </div>
+        </div>
+        <div class="col-sm-6" id="type" style="height:400px;margin-top: 50px;" >
+        </div>
+        <div class="col-sm-6 titleStyle">
+           <select id="edition" class="specialselect" ></select>
+            <div id="version" style="height:400px;margin-top: 0px"></div>
+        </div>
+        <div class="col-sm-12" id="lively" style="height:400px;" >
+        </div>
+        <!--<div class="col-sm-12" id="abnormal" style="height:400px;margin-top: 20px">
+        </div>-->
+    </div>
+</div>

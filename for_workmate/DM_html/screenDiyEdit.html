@@ -1,0 +1,57 @@
+<div id="screenDiyEditTitle">
+    <a href="index.html#screenDiyList" class="menuValue">自定义壁纸</a>&nbsp;/&nbsp;
+    <a href="javascript:void(0);" class="menuValue" id="titleValue"></a>
+</div>
+<div id="screenDiyEditContainer" class="list">
+    <div class="row">
+        <div class="col-sm-12 textEdit">
+            <form method='post' enctype="multipart/form-data" class="form-horizontal" id="payChannelForm" role="form">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name"><span class="requiredValue">自定义壁纸名称:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="请输入定制化自定义壁纸名称" />
+                    </div>
+                </div>
+                <div class="form-group" id="provider">
+                    <label class="col-sm-2 control-label" for="customerName"><span class="requiredValue">服务商:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="customerId" id="customerName" placeholder="请输入服务商名称" disabled />
+                    </div>
+                </div>
+                <div id="uploadScreen" class="form-group hidden">
+                    <label class="col-sm-2 control-label" for="screenBg"><span class="requiredValue">屏幕背景</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <input type="file" class="form-control" style="padding: 4px 12px;" name="files" id="screenBg" onchange="previewOldImg(this)" />
+                        <span> 建议添加尺寸320*240</span>
+                    </div>
+                </div>
+                <div id="uploadText" class="hidden" style="margin-left: 50px;margin-bottom: 10px;font-size: 16px;font-weight: 700">请裁剪图片</div>
+                <div class="form-group" id="uploadImgBox" style="margin-left: 50px;">
+                    <div id="preview" class="hidden" style="width:500px;height: 300px;overflow: auto">
+                        <img id="uploadImg" src="" alt="" />
+                    </div>
+                </div>
+                <div id="jcrop" class="form-group" style="">
+                    <div class="preview-container-text hidden" style="position:fixed; right: 420px; top: 130px;">
+                        <span style="font-weight: 700;font-size: 16px;">预览区：</span>
+                    </div>
+                    <div class="preview-container hidden" style="position:fixed; right: 156px; top: 156px;width: 322px;height: 242px;border: 1px solid #ccc;border-radius:5px;overflow: hidden;">
+                        <img id="jcropImg" src="" class="jcrop-preview" alt="请重新上传图片" />
+                    </div>
+                </div>
+                <input type="hidden" name="id" id="id" value="">
+                <input type="hidden" name="x" id="xx" value="">
+                <input type="hidden" name="y" id="yy" value="">
+                <input type="hidden" name="width" id="width" value="">
+                <input type="hidden" name="height" id="height" value="">
+                <input type="hidden" name="operateType" id="operateType" value="modify">
+                <!--<input type="hidden" class="editCustomerId" name="customerId" id="customerId" value="">-->
+                <div class="saveStyle hidden" id="saveDiv">
+                    <button type="submit" class="saveBtn">保存</button>
+                    <div class="return" onclick="goBackpayChannelDeviceList();">返回</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

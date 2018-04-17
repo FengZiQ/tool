@@ -1,0 +1,40 @@
+<div id="logQueryContainer" class="row">
+    <div class="col-sm-12 titleStyle">
+        <label class="searchText" for="queryDeviceId" style="float: left;margin-top: 6px">设备编号</label><input type="text" id="queryDeviceId" class="special" style="float: left"/>
+        <span id="dataRange">
+	        	<label for="reportrange" style="float: left; margin: 8px 10px 0 0;">日期:</label>
+		        <div id="reportrange" class="dateRange pull-left" style="border-radius: 4px;">
+                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                    <span id="searchDateRange"></span>
+                    <b class="caret"></b>
+                </div>
+	        </span>
+        <button class="searchBtn" type="button" onclick="getLogQueryList(1);" style="margin-left: 16px">查询</button>
+    </div>
+    <div class="col-sm-12 handle">
+        <div class="collect">该查询条件下，共<span class="fontbold">0</span>条记录。</div>
+        <table class="theadStyle">
+            <tr>
+                <th class="col-sm-4">设备编号</th>
+                <!--<th class="col-sm-4">筛选日期</th>-->
+                <th class="col-sm-4">日志下载</th>
+            </tr>
+        </table>
+    </div>
+    <div class="col-sm-12 tableBody" style="max-height: calc(100% - 190px);overflow: auto;">
+        <table class="mainTable" id="logQueryTable">
+            <tbody id="logQueryTbody" class="trStyle"></tbody>
+        </table>
+    </div>
+    <div class="paginationDiv">
+        <label class="branchs" for="branchText">每页条数：</label>
+        <select id="branchText" class="specialselect">
+            <option value="10">10</option>
+            <option selected value="15">15</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+        <div id="pagination" class="pagination"></div>
+    </div>
+</div>

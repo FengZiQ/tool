@@ -1,0 +1,88 @@
+<div id="customerConfigEditTitle">
+    <a href="index.html#customerConfig" class="menuValue">金额抓取通用配置</a>&nbsp;/&nbsp;
+    <a href="javascript:void(0);" class="menuValue" id="titleValue"></a>
+</div>
+<div id="customerConfigEditContainer" class="list">
+    <div class="row">
+        <div class="col-sm-12 textEdit">
+            <form class="form-horizontal" id="customerConfigForm" role="form">
+                <input type="text" class="form-control hidden" name="id" id="id" placeholder="" />
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="customerName"><span class="requiredValue">服务商名称:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="customerName" id="customerName" placeholder="请输入服务商名称" disabled />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="configName"><span class="requiredValue">配置名称:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="configName" id="configName" placeholder="请输入配置名称" />
+                    </div>
+                </div>
+                <div class="form-group" id="secretKey">
+                    <label class="col-sm-2 control-label" for="feeKeyword"><span class="requiredValue">金额识别关键字:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="feeKeyword" id="feeKeyword"  placeholder="金额识别关键字" />
+                    </div>
+                </div>
+                <!--<div class="form-group">-->
+                    <!--<label class="col-sm-2 control-label" for="paymentKeyword"><span class="requiredValue">支付类型关键字:</span><span class="required">*</span></label>-->
+                    <!--<div class="col-sm-3">-->
+                        <!--<input type="text" class="form-control" name="paymentKeyword" id="paymentKeyword" placeholder="支付类型关键字" />-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="exclusionKeyword"><span class="requiredValue">排除关键字:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="exclusionKeyword" id="exclusionKeyword" placeholder="排除关键字" />
+                    </div>
+                </div>
+                <!--<div class="form-group">-->
+                    <!--<label class="col-sm-2 control-label" for="buzzerFrequency"><span class="requiredValue">蜂鸣器频率:</span><span class="required">*</span></label>-->
+                    <!--<div class="col-sm-3">-->
+                        <!--<input type="text" class="subvalue form-control" id="buzzerFrequency" name="buzzerFrequency" placeholder="请输入蜂鸣器频率" />-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                    <!--<label class="col-sm-2 control-label" for="coderAlgorithm"><span class="requiredValue">解码算法:</span><span class="required">*</span></label>-->
+                    <!--<div class="col-sm-3">-->
+                        <!--<input type="text" class="subvalue form-control" id="coderAlgorithm" name="coderAlgorithm" placeholder="请输入解码算法" />-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="form-group hidden adminPer">
+                    <label class="col-sm-2 control-label"><span class="requiredValue">日志上传开关:</span><span class="required">*</span></label>
+                    <div class="col-sm-5">
+                        <input type="radio" id="logStatus1" name="logStatus" value="1" ><label for="logStatus1" class="radioLeft">开</label>
+                        <input type="radio" id="logStatus2" name="logStatus" value="0" checked="checked"><label for="logStatus2" class="radioRight">关</label>
+                    </div>
+                </div>
+                <div class="form-group hidden adminPer">
+                    <label class="col-sm-2 control-label"><span class="requiredValue">小票上传开关:</span><span class="required">*</span></label>
+                    <div class="col-sm-5">
+                        <input type="radio" id="receiptStatus1" name="receiptStatus" value="1" ><label for="receiptStatus1" class="radioLeft">开</label>
+                        <input type="radio" id="receiptStatus2" name="receiptStatus" value="0" checked="checked"><label for="receiptStatus2" class="radioRight">关</label>
+                    </div>
+                </div>
+                <!--<div class="form-group">-->
+                    <!--<label class="col-sm-2 control-label"><span class="requiredValue">蜂鸣器开关:</span><span class="required">*</span></label>-->
+                    <!--<div class="col-sm-3">-->
+                        <!--<input type="radio" name="buzzerStatus" id="buzzerStatus1" value="1" checked="checked" /><label class="radioLeft" for="buzzerStatus1">开</label>-->
+                        <!--<input type="radio" name="buzzerStatus" id="buzzerStatus2" value="0" /><label class="radioRight" for="buzzerStatus2">关</label>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                    <!--<label class="col-sm-2 control-label"><span class="requiredValue">开机语音开关:</span><span class="required">*</span></label>-->
+                    <!--<div class="col-sm-3">-->
+                        <!--<input type="radio" name="startupVoice" id="startupVoice1" value="1" checked="checked" /><label class="radioLeft" for="startupVoice1">开</label>-->
+                        <!--<input type="radio" name="startupVoice" id="startupVoice2" value="0" /><label class="radioRight" for="startupVoice2">关</label>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="saveStyle hidden" id="saveDiv">
+                    <button type="submit" class="saveBtn">保存</button>
+                    <div class="return" onclick="goBackCustomerConfig();">返回</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

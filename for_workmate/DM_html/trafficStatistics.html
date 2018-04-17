@@ -1,0 +1,26 @@
+<div id="trafficStatisticsContainer" class="row list">
+    <div class="col-sm-12 titleStyle">
+        <span id="dataRange">
+            <label for="reportrange" style="float: left; margin: 8px 10px 0 0;">日期:</label>
+            <div id="reportrange" class="dateRange pull-left" style="border-radius: 4px;">
+                <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                <span id="searchDateRange"></span>
+                <b class="caret"></b>
+            </div>
+        </span>
+        <label for="summaryType" style="margin-left: 20px">汇总方式</label>
+        <select id="summaryType" class="specialselect">
+            <option value="D">按天汇总</option>
+            <option value="M">按月汇总</option>
+        </select>
+        <label class="searchText" for="customerId" style="margin-right: 5px;">服务商名称:</label><select id="customerId" name="customerId" class="selectpicker" data-live-search="true"></select>
+        <label class="searchText" for="queryDeviceId">设备编号</label><input type="text" id="queryDeviceId" class="special"/>
+        <button class="searchBtn" type="button" onclick="getTrafficStatistics();">查询</button>
+    </div>
+    <div class="col-sm-12">
+        <div id="trafficShow">
+            <ul></ul>
+        </div>
+        <div id="trafficEcharts"></div>
+    </div>
+</div>

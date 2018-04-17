@@ -1,0 +1,38 @@
+<div id="receipManageContainer" class="row">
+	<div class="col-sm-12 titleStyle">			
+		<label class="searchText" for="customerId" style="margin-right: 5px;">服务商名称:</label><select id="customerId" name="customerId" class="selectpicker" data-live-search="true"></select>
+		<label class="searchText" for="queryDeviceId">设备编号:</label><input type="text" id="queryDeviceId" class="special"/>
+		<label class="searchText" for="queryDeviceType">产品类型</label><select id="productType" class="specialselect"></select>
+   		<label class="searchText" for="queryDeviceType">设备类型:</label><select id="queryDeviceType" class="specialselect"></select>
+        <button class="searchBtn" type="button" onclick="getReceipList(1);">筛选</button>           
+	</div>
+	<div class="col-sm-12">
+		<div class="collect">该查询条件下，共<span class="fontbold">0</span>条记录。</div>       
+        <table class="theadStyle">           
+            <tr>
+                <th class="col-xs-3" style="padding-left: 20px;">设备编号</th>
+                <th class="col-xs-3">服务商名称</th>
+				<th class="col-xs-3">产品类型</th>
+                <th class="col-xs-3">设备类型</th>
+                <!--<th class="col-xs-2">小票总数</th>               -->
+                <!--<th class="col-xs-2">解析成功</th>              -->
+            </tr>
+        </table>
+   	</div>
+	<div class="col-sm-12 tableBody" style="max-height: calc(100% - 175px);overflow: auto;">
+		<table class="mainTable" id="devicesTable">
+			<tbody id="devicesTbody" class="trStyle"></tbody>
+		</table>
+	</div>
+	<div class="paginationDiv">
+		<label class="branchs" for="branchText">每页条数：</label>
+		<select id="branchText" class="specialselect">
+			<option value="10">10</option>
+			<option value="15" selected>15</option>
+			<option value="25">25</option>
+			<option value="50">50</option>
+			<option value="100">100</option>
+		</select>
+		<div id="pagination" class="pagination"></div>
+	</div>
+</div>

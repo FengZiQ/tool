@@ -1,0 +1,45 @@
+<div id="speechTemplateEditTitle">
+    <a href="index.html#speechTemplate" class="menuValue">自定义语音模板</a>&nbsp;/&nbsp;
+    <a href="javascript:void(0);" class="menuValue" id="titleValue"></a>
+</div>
+<div id="speechTemplateEditContainer" class="list">
+    <div class="row">
+        <div class="col-sm-12 textEdit">
+            <form class="form-horizontal" id="speechTemplateForm" role="form" action='/voiceTemplateConfig/uploadOss' method='post' enctype="multipart/form-data">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name"><span class="requiredValue">语音模板名称:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="name" id="name" placeholder="请输入配置名称" />
+                    </div>
+                </div>
+                <div class="form-group" id="provider">
+                    <label class="col-sm-2 control-label" for="customerName"><span class="requiredValue">服务商:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <select id="customerId" name="customerId" class="selectpicker" data-live-search="true"></select>
+                    </div>
+                </div>
+                <div class="col-sm-10 tableBody" style="margin-left: 8%">
+                    <table style="table-layout: fixed">
+                        <thead class="theadStyle">
+                            <tr>
+                                <th class="col-sm-2"><input id='checkAllId' type='checkbox'></th>
+                                <th class="col-sm-3">请选择可定制的语音场景</th>
+                                <th class="col-sm-5">定制化语音文件上传</th>
+                            </tr>
+                        </thead>
+                        <tbody class="mainTable trStyle" id="speechTemplateTbody">
+                            <tr><td colspan='3'>查询不到数据！</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <input type="hidden" name="id" id="id">
+                <div class="saveStyle hidden" id="saveDiv">
+                    <input type="button" class="saveBtn" onclick="referSave()" value="保存"/>
+                    <!--<button type="submit" class="saveBtn">保存</button>-->
+                    <div class="return" onclick="goBackSpeechTemplateList();">返回</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

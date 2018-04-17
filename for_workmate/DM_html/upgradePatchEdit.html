@@ -1,0 +1,87 @@
+<div id="upgradePatchEditTitle">
+    <a href="index.html#upgradePatch" class="menuValue" >软件升级管理</a>&nbsp;/&nbsp;
+    <a href="javascript:void(0);" class="menuValue" id="titleValue"></a>
+</div>
+<div id="upgradePatchEditContainer" class="list">
+    <div class="row">
+        <div class="col-sm-12 textEdit">
+            <form class="form-horizontal" id="softwareUpgradForm" role="form">
+                <input type="hidden" name="id" id="id" value="" />
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="requiredValue">升级包类型:</span><span class="required">*</span></label>
+                    <div class="col-sm-6">
+                        <input type="radio" name="type" id="type1" value="firmware" checked="checked" /><label class="radioLeft" for="type1">固件升级包</label>
+                        <input type="radio" name="type" id="type2" value="client" /><label class="radioLeft" for="type2">客户端升级包</label>
+                        <input type="radio" name="type" id="type3" value="upgradeKeyboard" /><label class="radioRight" for="type3">键盘升级包</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="softName"><span class="requiredValue">升级包名称:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="softName" id="softName" placeholder="请输入升级包名称">
+                    </div>
+                </div>
+                <!--<div class="form-group">-->
+                <!--<label class="col-sm-2 control-label" for="type"><span class="requiredValue">软件类型:</span><span class="required">*</span></label>-->
+                <!--<div class="col-sm-3">-->
+                <!--<select class="form-control" name="type" id="type"></select>-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="form-group hidden" id="provider">
+                    <label class="col-sm-2 control-label" for="customerId"><span class="requiredValue">服务商:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <select id="customerId" name="customerId" class="selectpicker" data-live-search="true"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="subType"><span class="requiredValue">版本类型:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <select class="form-control" name="subType" id="subType"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="version"><span class="requiredValue">版本号:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" name="version" id="version" placeholder="请输入版本号名称">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"><span class="requiredValue">更新类型:</span><span class="required">*</span></label>
+                    <div class="col-sm-3" >
+                        <input type="radio" name="upgradeStatus" id="upgradeStatus0" value="0" checked="checked"><label for="upgradeStatus0" class="radioLeft" style="margin-right: 30px;">自然更新</label>
+                        <input type="radio" name="upgradeStatus" value="1" id="upgradeStatus1" ><label for="upgradeStatus1" class="radioRight">强制更新</label>
+                    </div>
+                </div>
+                <div class="form-group hidden" id="statusDiv">
+                    <label class="col-sm-2 control-label"><span class="requiredValue">发布状态:</span><span class="required">*</span></label>
+                    <div class="col-sm-3" >
+                        <input type="radio" name="status" id="status0" value="0" checked="checked"><label for="status0" class="radioLeft" style="margin-right: 42px;">未发布</label>
+                        <input type="radio" name="status" value="1" id="status1" ><label for="status1" class="radioRight">已发布</label>
+                    </div>
+                </div>
+                <div class="form-group hidden" id="fileDiv">
+                    <label class="col-sm-2 control-label" for="file"><span class="requiredValue">文件上传:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <input id="file" name="file" class="file" type="file" multiple data-max-file-count="1">
+                    </div>
+                </div>
+                <div class="form-group hidden" id="loadingUrl">
+                    <label class="col-sm-2 control-label"><span class="requiredValue">升级包下载:</span><span class="required">*</span></label>
+                    <div class="col-sm-3" >
+                        <a href="" id="ossUrl" style="top: 6px;position: relative;">升级包下载地址</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="updateLog"><span class="requiredValue">更新日志:</span><span class="required">*</span></label>
+                    <div class="col-sm-3">
+                        <textarea name="updateLog" rows="4" class="form-control" id="updateLog"></textarea>
+                    </div>
+                </div>
+                <div class="form-group saveStyle hidden">
+                    <button type="submit" class="saveBtn">保存</button>
+                    <div class="return" onclick="backSoftwareUpgrad();">返回</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div id="globalConfigContainer" class="row">
+	<div class="col-sm-12 titleStyle">
+		<label class="searchText" for="configName">配置名称:</label><input id="configName" type="text" class="special">
+		<button class="searchBtn" id="querybtn" onclick="getGlobalConfig(1);">查询</button>
+	</div>
+	<div class="col-sm-12 handle">
+		<button class="batchAdd" id="addbtn" onclick="globalConfigEdit('_add');">新增配置</button>
+		<!--<button class="batchDel" onclick="sendPlatform('data');">全部下发</button>-->
+		<div class="collect">该查询条件下，共<span class="fontbold">0</span>条记录。</div>
+		<table class="theadStyle">
+			<tr>
+				<th class="col-sm-2">配置名称</th>
+				<th class="col-sm-2">日志上传地址</th>
+				<th class="col-sm-2">小票上传地址</th>
+				<th class="col-sm-2">ping地址</th>
+				<th class="col-sm-2">操作</th>
+			</tr>
+		</table>
+	</div>
+	<div class="col-sm-12 tableBody" style="max-height: calc(100% - 190px);overflow: auto;">
+		<table class="mainTable" id="globalConfigTable"></table>
+	</div>
+	<div class="paginationDiv">
+		<label class="branchs" for="branchText">每页条数：</label>
+		<select id="branchText" class="specialselect">
+			<option value="10">10</option>
+			<option selected value="15">15</option>
+			<option value="25">25</option>
+			<option value="50">50</option>
+			<option value="100">100</option>
+		</select>
+		<div id="pagination" class="pagination"></div>
+	</div>
+</div>

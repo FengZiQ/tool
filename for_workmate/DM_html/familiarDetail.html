@@ -1,0 +1,32 @@
+<div id="familiarDetailTitle">
+	<a href="index.html#familiarQuestion" class="menuValue">常见问题</a>&nbsp;/&nbsp;
+	<a href="javascript:void(0);" class="menuValue">问题详情</a>
+</div>
+<div id="familiarDetailContainer" class="list">
+	<div class="row">
+		<div class="col-sm-12 textEdit">
+            <form class="form-horizontal" id="addQuestionForm" role="form">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="addTitle"><span class="requiredValue">问题标题:</span></label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="title" id="questionTitle" placeholder="请输入问题标题(20字以内)" />
+                    </div>
+                </div>
+             	<div class="form-group">
+                    <label class="col-sm-2 control-label" for="addTag"><span class="requiredValue">问题标签:</span></label>
+                    <div class="col-sm-4" >
+                    	<span id="questionAddTagDiv"></span>                    	
+                    </div>                   
+               	</div>
+               	<div class="form-group">
+                    <label class="col-sm-2 control-label" for="addTag"><span class="requiredValue">问题内容:</span></label>
+                    <div class="col-sm-9" id="contentValue" style="margin-top: 8px;overflow: auto;"></div>                   
+               	</div>
+                <div class="fixStyle">                	
+                		<div class="saveBtn" style="margin-left: 15%;" onclick="editQuestion();">编辑</div>
+                    	<div class="return" onclick="goQuestionList();">返回</div>                                 
+                </div>
+            </form>           
+    	</div>
+	</div>
+</div>

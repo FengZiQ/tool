@@ -1,0 +1,76 @@
+<div id="customerLivelyContainer" class="row">
+    <div class="col-sm-12 titleStyle">
+        <div class="searchContent">
+            <label class="searchText">统计方式:</label>
+            <input type="radio" name="countBy" value="1" id="countByD" checked/><label for="countByD" class="countByValue">按天</label>
+            <input type="radio" name="countBy" value="2" id="countByM" /><label for="countByM" class="countByValue">按月</label>
+            <input type="radio" name="countBy" value="3" id="countByQ" /><label for="countByQ" class="countByValue">按季</label>
+            <label class="searchText" style="margin-left: 30px;">统计周期:</label>
+            <div class="input-group date form_date" id="stratRange">
+                <input id="stratRangeTime" class="form-control" size="16" type="text" value="" style="background: #fff;" readonly>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+            <div class="QRangeDiv hidden" id="stratQRange">
+                <input id="stratQRangeTime" class="form-control" size="16" type="text" value="" style="background: #fff;" readonly>
+				<span class="datetimepicker-dropdown-bottom-right datetimepicker-dropdown quarterPicker hidden" id="stratQRangeSpan">
+					<span class="quarterItem" data-timer="1">第一季度</span>
+					<span class="quarterItem" data-timer="2">第二季度</span>
+					<span class="quarterItem" data-timer="3">第三季度</span>
+					<span class="quarterItem" data-timer="4">第四季度</span>
+				</span>
+            </div>
+            <hr style="height:1px;border:none;border-top:1px solid #555555;width: 30px;display: inline-flex;position: relative;top: -5px;" />
+            <div class="input-group date form_date" id="endRange">
+                <input id="endRangeTime" class="form-control" size="16" type="text" value="" style="background: #fff;" readonly>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+            <div class="QRangeDiv hidden" id="endQRange">
+                <input id="endQRangeTime" class="form-control" size="16" type="text" value="" style="background: #fff;" readonly>
+				<span class="datetimepicker-dropdown-bottom-right datetimepicker-dropdown quarterPicker hidden" id="endQRangeSpan">
+					<span class="quarterItem" data-timer="1">第一季度</span>
+					<span class="quarterItem" data-timer="2">第二季度</span>
+					<span class="quarterItem" data-timer="3">第三季度</span>
+					<span class="quarterItem" data-timer="4">第四季度</span>
+				</span>
+            </div>
+            <button class="searchBtn" onclick="searchConutList()">查询</button>
+        </div>
+    </div>
+    <div class="col-sm-12 tableBody" style="max-height: calc(100% - 80px);overflow: auto;">
+        <div class="col-sm-12" id="deviceConutChart"></div>
+        <div class="col-sm-12" id="proportionConut">
+            <div class="col-sm-12 handle">
+                <div class="collect">该查询条件下，共<span class="fontbold">0</span>条记录。</div>
+                <div class="col-sm-12 titleStyle" id="showType">
+                    <table class="theadStyle" style="table-layout: fixed" id="titleBar">
+                        <tr style='background: #f3f3f3'>
+                            <th>统计周期</th>
+                            <th>截止当前已激活设备数</th>
+                            <th>当日连接设备数</th>
+                            <th>设备使用率</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-sm-12 tableBody">
+                    <table class="mainTable" style="table-layout: fixed">
+                        <tbody id="customerLivelyTable" class="trStyle"></tbody>
+                    </table>
+                </div>
+                <div id="export" class="hidden">
+                    <a href="javascript:void(0)">点击导出excel表格</a>
+                </div>
+                <div class="paginationDiv">
+                    <label class="branchs" for="branchText">每页条数：</label>
+                    <select id="branchText" class="specialselect">
+                        <option value="10">10</option>
+                        <option selected value="15">15</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                    <div id="pagination" class="pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

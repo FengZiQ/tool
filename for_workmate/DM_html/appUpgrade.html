@@ -1,0 +1,33 @@
+<div id="appUpgradeContainer" class="row">
+    <div class="col-sm-12 handle">
+        <button class="batchAdd hidden" onclick="addAppUpgradeList()" id="addbtn">创建版本</button>
+        <div class="collect">该查询条件下，共<span class="fontbold">0</span>条记录。</div>
+        <table class="theadStyle">
+            <tr class="thStyle">
+                <th class="col-sm-1">版本号</th>
+                <th class="col-sm-2">版本CODE</th>
+                <th class="col-sm-1">客户类型</th>
+                <th class="col-sm-1">强制升级</th>
+                <th class="col-sm-2">下载地址</th>
+                <th class="col-sm-1">应用大小</th>
+                <th class="col-sm-2">升级内容</th>
+                <th class="col-sm-2">操作</th>
+            </tr>
+        </table>
+    </div>
+    <div class="col-sm-12 tableBody" style="max-height: calc(100% - 190px);overflow: auto;">
+        <table class="mainTable" id="appUpgradeTable">
+            <tbody class="trStyle"></tbody>
+        </table>
+    </div>
+    <div class="paginationDiv">
+        <label class="branchs" for="branchText">每页条数：</label>
+        <select id="branchText" class="specialselect">
+            <option value="10">10</option>
+            <option value="15" selected>15</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+        </select>
+        <div id="pagination" class="pagination"></div>
+    </div>
+</div>

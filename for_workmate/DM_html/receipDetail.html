@@ -1,0 +1,27 @@
+<div id="receipDetailTitle">
+    <a href="javascript:void(0);" class="menuValue" onclick="backReceipManage();">小票管理</a>&nbsp;/&nbsp;
+    <a href="index.html#receipList" class="menuValue">小票列表</a>&nbsp;/&nbsp;
+    <a href="javascript:void(0);" class="menuValue">小票详情</a>
+</div>
+<div id="receipDetailContainer" class="list">
+	<div class="row">
+		<div class="receiptSummary">
+			当前设备号:<span id="deviceNo" class="redValue"></span>，当前小票ID：<span id="receipId" class="redValue"></span>。
+		</div>		
+		<div class="col-sm-12">
+			<div class="col-sm-6 canvasDiv" style="overflow: auto;padding: 0;">		
+				<div class="receipValueTitle">小票预览</div>
+		       	<div id="pictureResolveCanvas">
+					<div id="receiptStr"></div>
+					<div id="canvasDiv" style="position: relative;">
+						<canvas id="imgcanvas"></canvas>						
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+		       	<div class="resolveValueTitle">解析结果</div>
+		       	<div id="resolveResult"></div>
+			</div>			
+		</div>
+	</div>
+</div>

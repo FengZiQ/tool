@@ -1,0 +1,35 @@
+<div id="divisionalManageContainer" class="row">
+    <div class="col-sm-12 titleStyle">
+        <label class="searchText" for="customerId" style="margin-right: 5px;">服务商名称:</label><select id="customerId" name="customerId" class="selectpicker" data-live-search="true"></select>
+        <label class="searchText nickName" for="dictionaryName">部门名称:</label><input id="dictionaryName" type="text" class="special">
+        <button class="searchBtn" id="querybtn" onclick="getdivisionalList(1);" >查询</button>
+    </div>
+    <div class="col-sm-12 handle">
+        <button class="batchAdd hidden" id="addbtn" onclick="addDivisional();">创建部门</button>
+        <div class="collect">该查询条件下，共<span class="fontbold">0</span>条记录。</div>
+        <table class="theadStyle">
+            <tr>
+                <th class="col-sm-2">编号</th>
+                <th class="col-sm-3">部门名称</th>
+                <th class="col-sm-4">描述</th>
+                <th class="col-sm-3">操作</th>
+            </tr>
+        </table>
+    </div>
+    <div class="col-sm-12 tableBody" style="max-height: calc(100% - 190px);overflow: auto;">
+        <table class="mainTable" id="divisionalTable">
+            <tbody class="trStyle"></tbody>
+        </table>
+    </div>
+    <div class="paginationDiv hidden">
+        <label class="branchs" for="branchText">每页条数：</label>
+        <select id="branchText" class="specialselect">
+            <option value="10">10</option>
+            <option value="15" selected>15</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+        </select>
+        <div id="pagination" class="pagination"></div>
+    </div>
+</div>
+

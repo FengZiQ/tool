@@ -1,0 +1,59 @@
+<div id="stockOutManagerContainer" class="row">
+    <div class="col-sm-12 titleStyle">
+        <label class="searchText" for="queryDeviceType">收款人</label><select id="queryDeviceType" class="specialselect"></select>
+        <label class="searchText" for="queryDeviceType">订单号</label><select id="queryDeviceType2" class="specialselect indent"></select>
+        <button class="searchBtn" type="button">确认出库</button>
+        <button class="recordBtn record" type="button">历史出库记录</button>
+        <button class="recordBtn" type="button">预览出库单</button>
+
+    </div>
+    <div class="col-xs-12 ">
+        <table class="indentManag">
+            <tr>
+                <th class="col-sm-2">收单人</th>
+                <th class="col-sm-2">订单信息</th>
+                <th class="col-sm-2">联系方式</th>
+                <th class="col-sm-2">客户信息</th>
+                <th class="col-sm-2">订单备注</th>
+                <th class="col-sm-2">操作</th>
+            </tr>
+            <tbody class="indentContent">
+
+            </tbody>
+        </table>
+        <div class="scanContent">
+            <p class="triangle-right">请用扫码枪对准设备包装箱二维码，进行扫码出库</p>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <table class="theadStyle">
+            <tr>
+                <th class="col-sm-1" style="padding-left: 20px;">序号<th>
+                <th class="col-sm-2">箱号</th>
+                <th class="col-sm-2">箱标信息</th>
+                <th class="col-sm-1">设备数</th>
+                <th class="col-sm-2">扫码时间</th>
+                <th class="col-sm-2">备注</th>
+                <th class="col-sm-2">操作</th>
+            </tr>
+        </table>
+    </div>
+    <div class="col-sm-12 tableBody" style="max-height: calc(100% - 175px);overflow: auto;">
+        <table class="mainTable" id="devicesTable">
+            <tbody id="devicesTbody" class="trStyle">
+            <tr class="item">
+                <td class="col-sm-1 number" style="padding-left: 20px;">1</td>
+                <td class="col-sm-2"><input type="text" class="code"></td>
+                <td class="col-sm-2"></td>
+                <td class="col-sm-1"></td>
+                <td class="col-sm-2"></td>
+                <td class="col-sm-2"></td>
+                <td class="col-sm-2 del"><span class="delBorder">删除</span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+>
