@@ -9,23 +9,21 @@ def login():
     session = requests.session()
 
     # step1
-    url0 = 'http://cas.testing.2dupay.com/login?service=http://dm.testing.inspos.cn/'
+    url1 = 'http://cas.testing.2dupay.com/login?service=http%3A%2F%2Fdm.testing.inspos.cn%2F'
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
         'Referer': 'http://cas.testing.2dupay.com/login?service=http%3A%2F%2Fdm.testing.inspos.cn%2F',
         'Connection': 'keep-alive'
     }
-
-    content0 = session.post(url0, headers=headers, verify=False)
-    # print(content0.text)
-
-    pattern0 = re.compile('.*?<input type="hidden" name="lt" value="(.*?)" />.*?')
-    match0 = re.findall(pattern0, content0.text)
-    ticket = match0[0]
+    content1 = session.post(url1, headers=headers)
+    # print(content1.text)
+    pattern1 = re.compile('.*?<input type="hidden" name="lt" value="(.*?)" />.*?')
+    match1 = re.findall(pattern1, content1.text)
+    ticket = match1[0]
 
     # step2
-    url1 = 'http://cas.testing.2dupay.com/login?'
-
+    url2 = 'http://cas.testing.2dupay.com/login?'
+    cookies1 = content1.cookies.values()
     data = {
         'username': 'admin',
         'password': '123321qwe',
@@ -34,22 +32,32 @@ def login():
         '_eventId': 'submit',
         'submit': 'LOGIN'
     }
-
     for k, v in data.items():
-        url1 += k + '=' + v + '&'
+        url2 += k + '=' + v + '&'
+    content2 = session.post(url2[:-1], headers=headers, cookies={'JSESSIONID': cookies1[0]})
+    # print(content2.text)
 
-    session.post(url1[:-1], headers=headers, verify=False)
+    # step3
+    cookies2 = content2.history[1].cookies.values()
+    content3 = session.get(
+        'http://dm.testing.inspos.cn/homeIndex.html',
+        cookies={'JSESSIONID': cookies2[0]},
+        verify=False
+    )
+    print(content3.text)
+
+    get_url_result = session.get('http://dm.testing.inspos.cn/index.html#equipmentShow')
 
     result = session.post(
         'http://dm.testing.inspos.cn/device/upgrade/edit',
         headers={
-            'Content-Type': 'application/x-www-form-urlencoded',
+            'Content-Type': 'application/json',
             'Referer': 'http://dm.testing.inspos.cn/index.html',
-            'Accept': 'application/json, text/javascript, */*; q=0.01',
-            'Host': 'dm.testing.inspos.cn'
+            'Host': 'dm.testing.inspos.cn',
+            'Connection': 'keep-alive'
         },
         data={"deviceNoList": ["3333333333222222222"], "upgradeInfoList": [{"name": "BasePayQBT_E", "version": ""}]},
-        verify=False
+        cookies={'JSESSIONID': cookies2[0]}
     )
 
     print('ha')
