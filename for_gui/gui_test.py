@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding=utf-8
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from to_log import *
@@ -10,7 +10,7 @@ Fail = "'result': 'f'"
 
 class GUITestTool(object):
 
-    server = "http://cas.testing.2dupay.com/login?service=http%3A%2F%2Fspadmin.stable.2dupay.com%2F"
+    server = "http://cas.testing.2dupay.com/login?service=http%3A%2F%2Fdm.testing.inspos.cn%2F"
 
     def __init__(self, base_url=server):
         # login user and username
@@ -31,6 +31,7 @@ class GUITestTool(object):
         self.driver.get(base_url)
         self.driver.find_element_by_id('username').send_keys(self.user)
         self.driver.find_element_by_id("password").send_keys(self.password)
+        self.driver.find_element_by_id('captcha').send_keys('123456')
         self.driver.find_element_by_id("loginSubmit").click()
         time.sleep(3)
 
@@ -57,12 +58,13 @@ class GUITestTool(object):
             print(e)
             all_logs(location + ' is not found')
 
-    def element_text_assert(self, path, location, expected_text, mark_text='', end='', locator=By.XPATH):
-        all_logs('期望结果: ' + mark_text + expected_text)
+    # 每条case的最后一个断言end = '@结束@'
+    def equal_text_assert(self, path, location, expected_text, end='', locator=By.XPATH):
+        all_logs('期望结果: ' + location + ': ' + expected_text)
         try:
             actual_text = self.driver.find_element(locator, path).text
-            all_logs('实际结果: ' + mark_text + actual_text)
-            testlink(mark_text + actual_text)
+            all_logs('实际结果: ' + location + ': ' + actual_text)
+            testlink(location + ': ' + actual_text)
             testlink(end)
             if actual_text != expected_text:
                 self.FailFlag = True
@@ -73,25 +75,29 @@ class GUITestTool(object):
             testlink(end)
             all_logs(location + ' is not found\n')
 
-    def page_text_assert(self, expected_text, end=''):
-        result = self.driver.find_element_by_tag_name('body').text
-        all_logs('期望结果: ' + expected_text)
-        if expected_text not in result:
+    # 每条case的最后一个断言end = '@结束@'
+    def contained_text_assert(self, path, location, expected_text, end='', locator=By.XPATH):
+        all_logs('期望结果: ' + location + ': ' + expected_text)
+        try:
+            actual_text = self.driver.find_element(locator, path).text
+            all_logs('实际结果: ' + location + ': ' + actual_text)
+            testlink(location + ': ' + actual_text)
+            testlink(end)
+            if expected_text in actual_text:
+                self.FailFlag = True
+        except Exception as e:
             self.FailFlag = True
-            all_logs('实际结果: 页面中没有 ' + expected_text)
-            testlink('页面中没有 ' + expected_text)
+            all_logs('实际结果: ' + str(e))
+            testlink(str(e))
             testlink(end)
-        else:
-            all_logs('实际结果: 页面中有 ' + expected_text)
-            testlink('页面中有 ' + expected_text)
-            testlink(end)
+            all_logs(location + ' is not found\n')
 
     def wait_for_element(self, path, location, locator=By.XPATH):
         text = ''
-        for i in range(60):
+        for i in range(10):
             try:
                 if self.driver.find_element(locator, path):
-                    text = self.driver.find_element(locator, path).text
+                    text += self.driver.find_element(locator, path).text
                     break
             except Exception as e:
                 print(e)

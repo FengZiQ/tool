@@ -6,7 +6,7 @@ from email.mime.text import MIMEText
 import base64
 
 
-def send_email(subject='邮件主题', content='邮件正文'):
+def send_email(subject='邮件主题', content='邮件正文', rec=list()):
     server = 'smtp.exmail.qq.com'
     port = 465
     username = 'fengziqi@inspiry.cn'
@@ -16,7 +16,6 @@ def send_email(subject='邮件主题', content='邮件正文'):
     msg['Subject'] = subject
     msg['From'] = 'fengziqi@inspiry.cn'
     msg['To'] = 'fengziqi@inspiry.cn'
-    rec = ['fengziqi@inspiry.cn']
 
     try:
         s = smtplib.SMTP_SSL(server, port=port)
