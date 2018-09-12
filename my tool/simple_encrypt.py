@@ -12,5 +12,6 @@ def encrypt(s=''):
 
     print(s_s)
 
+
 if __name__ == "__main__":
-    encrypt('Inspiry2o180')
+    encrypt('192.1.10.1')

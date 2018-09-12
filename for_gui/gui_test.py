@@ -122,3 +122,6 @@ class GUITestTool(object):
             all_logs('-*- The case is executed -*-\n')
             all_logs(Pass)
             testlink(Pass + '\n')
+
+
+tool = GUITestTool()
