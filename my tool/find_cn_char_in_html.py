@@ -1,5 +1,6 @@
 # coding=utf-8
 import re
+from batch_change_char import list_files
 
 
 def find_cn_char(file, char_file):
@@ -17,7 +18,8 @@ def find_cn_char(file, char_file):
 
 
 if __name__ == "__main__":
-    find_cn_char(
-        'D:/BaiduNetdiskDownload/index.vue',
-        'D:/BaiduNetdiskDownload/index.vue.txt',
-    )
+    for file in list_files('D:/BaiduNetdiskDownload/components'):
+        find_cn_char(
+            file,
+            file + '.txt',
+        )

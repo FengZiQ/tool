@@ -1,3 +1,6 @@
-from reuseFirefox import driver
+from selenium import webdriver
 
-driver.get('http://www.runoob.com/linux/linux-command-manual.html')
+
+driver = webdriver.Firefox()
+
+res = driver.get('https://www.cnblogs.com/aland-1415/p/7197021.html#top')

@@ -1,4 +1,6 @@
-from reuseFirefox import driver
+from selenium import webdriver
 
 
-driver.get('https://www.baidu.com')
+driver = webdriver.Firefox()
+
+res = driver.get('https://www.baidu.com')
